@@ -19,7 +19,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         people=new ArrayList<Person>();
         people.add(new Person(R.drawable.p1,"Лосяш","Лесное животное"));
-        people.add(new Person(R.drawable.p2,"Фимишин","Японский террорист"));
+        people.add(new Person(R.drawable.p1,"Фимишин","Японский террорист"));
+        people.add(new Person(R.drawable.p1,"Фимишин","Японский террорист"));
+        people.add(new Person(R.drawable.p1,"Фимишин","Японский террорист"));
+        people.add(new Person(R.drawable.p1,"Фимишин","Японский террорист"));
         LinearLayoutManager linearLayout=new LinearLayoutManager(this);
         rv=findViewById(R.id.rv);
         rv.setLayoutManager(linearLayout);
