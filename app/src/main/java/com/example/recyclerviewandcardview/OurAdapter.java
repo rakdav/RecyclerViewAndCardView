@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -31,10 +32,16 @@ public class OurAdapter extends RecyclerView.Adapter<OurAdapter.OurAdapterViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OurAdapterViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull OurAdapterViewHolder holder, final int position) {
         holder.imageView.setImageResource(persons.get(position).getImage());
         holder.title.setText(persons.get(position).getTitle());
         holder.desc.setText(persons.get(position).getDesc());
+        holder.cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,persons.get(position).getTitle(),Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
