@@ -1,10 +1,12 @@
 package com.example.recyclerviewandcardview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -23,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         people.add(new Person(R.drawable.p1,"Фимишин","Японский террорист"));
         people.add(new Person(R.drawable.p1,"Фимишин","Японский террорист"));
         people.add(new Person(R.drawable.p1,"Фимишин","Японский террорист"));
-        LinearLayoutManager linearLayout=new LinearLayoutManager(this);
+//        LinearLayoutManager layoutLayout=new LinearLayoutManager(this);
+        GridLayoutManager linearLayout=new GridLayoutManager(this,2);
         rv=findViewById(R.id.rv);
         rv.setLayoutManager(linearLayout);
         OurAdapter adapter=new OurAdapter(people,this);
